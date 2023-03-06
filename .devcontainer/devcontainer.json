@@ -1,0 +1,35 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "hostRequirements": {
+    "cpus": 4
+  },
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "npm install && npm run build",
+  "postCreateCommand": "",
+  "postAttachCommand": {
+    "server": "npm run dev"
+  },
+  "customizations": {
+    "extensions": [
+      "cschleiden.vscode-github-actions",
+      "GitHub.copilot",
+      "esbenp.prettier-vscode",
+      "ms-vscode-remote.remote-containers",
+      "orta.vscode-jest",
+      "ms-vsliveshare.vsliveshare",
+      "bradlc.vscode-tailwindcss",
+      "csstools.postcss",
+      "dbaeumer.vscode-eslint"
+    ],
+    "codespaces": {
+      "openFiles": ["pages/index.js"]
+    }
+  },
+  "portsAttributes": {
+    "3000": {
+      "label": "Application",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "forwardPorts": [3000]
+}
